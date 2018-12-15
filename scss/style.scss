@@ -1,0 +1,29 @@
+body {
+	background-color: #829a9c;
+	font-family: 'Questrial', sans-serif;
+}
+
+h1 {
+	font-size: 36px;
+	letter-spacing: 1.5px;
+	color: #ffe4e1;
+	text-transform: uppercase;
+}
+
+.main-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-left: 15px;
+	padding-right: 15px;
+	.btn {
+		padding: .5em 2.5em;
+		font-size: 15px;
+		letter-spacing: 1.5px;
+		background-color: #ffe4e1;
+		color: #a39190;
+		border: 2px solid #a39190;
+		margin-bottom: 25px;
+}
+}
