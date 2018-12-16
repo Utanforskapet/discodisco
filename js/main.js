@@ -60,10 +60,10 @@ function draw() {
 }
 */
 
-var xspacing = 8;    // Distance between each horizontal location
+var xspacing = 30;    // Distance between each horizontal location
 var w;                // Width of entire wave
 var theta = 0.0;      // Start angle at 0
-var period = 500.0;   // How many pixels before the wave repeats
+var period = 400.0;   // How many pixels before the wave repeats
 var dx;               // Value for incrementing x
 var yvalues;  // Using an array to store height values for the wave
 
@@ -94,7 +94,8 @@ function calcWave() {
    for (var i = 0; i < spectrum.length; i++) {
     //var x = map(i, 0, spectrum.length, 0, 360);
     amp = spectrum[i];
-    yvalues[i] = sin(x)*(amp/2);
+    yvalues[i] = cos(x)*(amp/2);
+    //yvalues[i] = PI * (x/2)^2;
     x+=dx;
   }
 }
@@ -104,14 +105,16 @@ function renderWave() {
   fill(255, 228, 225);
   // A simple way to draw the wave with an ellipse at each location
   for (var x = 0; x < yvalues.length; x++) {
-  		console.log(x);
-  	  	translate(x*xspacing, height/2+yvalues[x]);
-  		rotate(yvalues[x] / x);
-  		star(0, 0, 5, 70, 3); 
-    	//ellipse(x*xspacing, height/2+yvalues[x], 5, 5);
+  	  //translate(xspacing, height + yvalues[x]);
+      //translate(x*xspacing, height/2+yvalues[x]);
+      //rotate(frameCount / 50.0);
+  		//star(0, 0, 2, 20, 3); 
+    	//star(x*xspacing, height/2+yvalues[x], 2, 15, 3);
+      ellipse(x*xspacing, height/2+yvalues[x], 5, 5);
   }
 }
 
+/*
 function star(x, y, radius1, radius2, npoints) {
   var angle = TWO_PI / npoints;
   var halfAngle = angle/2.0;
@@ -125,5 +128,6 @@ function star(x, y, radius1, radius2, npoints) {
     vertex(sx, sy);
   }
   endShape(CLOSE);
-}
+} */
+
 
